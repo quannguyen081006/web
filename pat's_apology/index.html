@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Forgive Me?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffd1dc;
+            /* 更粉嫩的背景色 */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background-color: #fff5f7;
+            /* 更柔和的容器背景 */
+            padding: 40px;
+            border-radius: 15px;
+            /* 更圆润的边角 */
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            border: 6px solid #ffb6c1;
+            /* 更粉嫩的边框 */
+            position: relative;
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
+            /* 添加粉色阴影 */
+        }
+
+        h1 {
+            color: #ff69b4;
+            /* 更亮的粉色标题 */
+            font-size: 2.5rem;
+            margin: 30px 0;
+            text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.2);
+            /* 添加文字阴影 */
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        button {
+            padding: 12px 45px;
+            background-color: #ffb6c1;
+            /* 更粉嫩的按钮背景 */
+            color: #d4365c;
+            /* 更深的按钮文字颜色 */
+            border: 2px solid #ff69b4;
+            /* 更亮的边框 */
+            border-radius: 10px;
+            /* 更圆润的按钮 */
+            font-size: 18px;
+            font-weight: bold;
+            /* 加粗按钮文字 */
+            cursor: pointer;
+            box-shadow: 0 3px 5px rgba(255, 105, 180, 0.2);
+            /* 添加按钮阴影 */
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffc0cb;
+            /* 悬停时的按钮颜色 */
+            transform: translateY(-2px);
+            /* 悬停时微微上浮 */
+        }
+
+        #yesBtn {
+            transition: transform 0.3s;
+        }
+
+        #yesBtn:hover {
+            transform: scale(1.1);
+        }
+
+        .cat-image {
+            width: 220px;
+            /* 略微放大图片 */
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            border-radius: 15px;
+            /* 圆角图片 */
+            box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
+            /* 添加图片阴影 */
+        }
+
+        #screen2,
+        #screen3 {
+            display: none;
+        }
+
+        /* 添加心形装饰 */
+        .heart-decoration {
+            position: absolute;
+            color: #ffb6c1;
+            font-size: 20px;
+            opacity: 0.6;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 添加背景装饰 -->
+    <div id="hearts-container"></div>
+
+    <!-- Context Screen 1 -->
+    <div id="screen0" class="container">
+        <img src="injails.png" alt="Cute kitten" class="cat-image">
+        <h1>Pat's apology</h1>
+        <p style="color: #ff69b4; font-size: 1.2rem; margin: 20px 0; line-height: 1.6;">
+            I'm so sorry for being such an idiot. You have every rights to be really upset and don't want to talk to me
+            right now but I hope you’ll hear me out — I take full responsibility and just want you to know how much I
+            regret it.
+        </p>
+        <div class="buttons">
+            <button id="startBtn">Continue</button>
+        </div>
+    </div>
+
+    <!-- Context Screen 2 -->
+    <div id="screen0b" class="container" style="display: none;">
+        <img src="daydut.png" alt="Cute kitten" class="cat-image">
+        <h1>I know I messed up badly, I never want to hurt or upset you </h1>
+        <p style="color: #ff69b4; font-size: 1.2rem; margin: 20px 0; line-height: 1.6;">
+            Có thể là t đã thất hứa với m nhiều lần, t đã thất bại trong việc là một người bạn trai của m, thất bại ngay
+            cả khi làm một người bạn của m, t đã không thể
+            trở thành một nơi để m có thể trải lòng. T xin lỗi m vì đôi khi t vẫn behave như một thằng khốn nạn như vậy,
+            t vẫn chưa thể đối xử với m một cách tốt nhất. t biết t vẫn như vậy và t vô cùng hối lỗi
+            vì những điều đó, t thật sự thương m rất nhiều, dù đôi khi hành động của t làm cho m hoài nghi tình cảm của
+            t nhưng t thật sự thật sự thương m rất nhiều. T biết là bao nhiêu lời xin lỗi nữa cũng không thể
+            thay đổi dược sự thật rằng t đã tổn thương m, bao nhiều hành động nữa cũng không thể bù đắp được lỗi lầm lần
+            này của t nhưng mà t mong rằng m sẽ thấy được tình cảm của t và những dòng cảm xúc hối hận này đủ để m có
+            thể cho t một cơ hội nữa để được nói chuyện với m.
+        </p>
+        <div class="buttons">
+            <button id="continueBtn">Continue</button>
+        </div>
+    </div>
+
+    <!-- Context Screen 3 -->
+    <div id="screen0c" class="container" style="display: none;">
+        <img src="abouttocry.png" alt="Cute kitten" class="cat-image">
+        <h1>T cũng nghĩ là có thể m sẽ vẫn không tha lỗi cho t được</h1>
+        <p style="color: #ff69b4; font-size: 1.2rem; margin: 20px 0; line-height: 1.6;">
+            Dù t có cố gắng bao nhiêu để làm m vui để bù đắp thì sẽ vẫn không bao giờ đủ, t biết m buồn nhiều lắm, t
+            cũng đã đặt trường hợp rằng t là m và thật sự chuyện hôm qua rất tổn thương tới mức
+            chẳng muốn tha thứ và mong t hãy biến mất đi. T thật xin lỗi m, t xin lỗi m nhiều lắm và t còn muốn được làm
+            nhiều thứ hơn với m, nên làm ơn cho t một cơ hội nữa để cố gắng
+            không cho những chuyện như vậy xảy ra giữa 2 đứa nữa, t sẽ cố gắng để trở thành một phiên bản tốt hơn nữa để
+            được xứng đáng nói chuyện với m. T xin m tha thứ cho t lần này nha, t xin lỗi m nhiều lắm.
+        </p>
+        <div class="buttons">
+            <button id="continueBtn2">Continue</button>
+        </div>
+    </div>
+
+    <!-- First Question Screen -->
+    <div id="screen1" class="container" style="display: none;">
+        <img src="crylittle.png" alt="Sad kitten" class="cat-image">
+        <h1>M có thể thứ lỗi cho t lần này được không,plsplsplspls</h1>
+        <div class="buttons">
+            <button id="yesBtn1">Yes</button>
+            <button id="noBtn1">đéo, cút mẹ m đi</button>
+        </div>
+    </div>
+
+    <!-- Interactive Question Screen -->
+    <div id="screen2" class="container" style="display: none;">
+        <img src="supercrying.png" alt="Sad kitten" class="cat-image">
+        <h1>Đi mà làm ơn luôn, t hối hận lắm rồi, m tha lỗi cho t đi mà</h1>
+        <div class="buttons">
+            <button id="yesBtn2">Yes</button>
+            <button id="noBtn2" style="position: relative;">No</button>
+        </div>
+    </div>
+
+
+    <!-- Another Interactive Question Screen -->
+    <div id="screen2b" class="container" style="display: none;">
+        <img src="bigeyes.png" alt="Pleading kitten" class="cat-image">
+        <h1>Are you sure you won't forgive me?</h1>
+        <div class="buttons">
+            <button id="yesBtn3">Yes, I forgive you</button>
+            <button id="noBtn3" style="position: relative;">Still No</button>
+        </div>
+    </div>
+
+    <!-- Thank You Screen -->
+    <div id="screen3" class="container" style="display: none;">
+        <img src="thankyou.png" alt="Happy kitten" class="cat-image">
+        <h1>I knew you would forgive me! 💗
+            Nói chứ cho t nói chuyện lại với m để mình cùng nhau giải quyết (t) nha, và cũng
+            chửi t để ít nhiều bù lại những thứ t đã làm với m.
+        </h1>
+    </div>
+
+    <script>
+        // 添加装饰性心形到背景
+        function addHearts() {
+            const heartsContainer = document.createElement('div');
+            heartsContainer.style.position = 'fixed';
+            heartsContainer.style.top = '0';
+            heartsContainer.style.left = '0';
+            heartsContainer.style.width = '100%';
+            heartsContainer.style.height = '100%';
+            heartsContainer.style.overflow = 'hidden';
+            heartsContainer.style.zIndex = '-1';
+            document.body.appendChild(heartsContainer);
+
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '💕';
+                heart.className = 'heart-decoration';
+                heart.style.position = 'absolute';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.opacity = Math.random() * 0.5;
+                heart.style.fontSize = Math.random() * 15 + 15 + 'px';
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+        // 在页面加载时添加心形
+        window.addEventListener('load', addHearts);
+
+        // 获取元素
+        const screen0 = document.getElementById('screen0');
+        const screen0b = document.getElementById('screen0b');
+        const screen0c = document.getElementById('screen0c');
+        const screen1 = document.getElementById('screen1');
+        const screen2 = document.getElementById('screen2');
+        const screen2b = document.getElementById('screen2b');
+        const screen3 = document.getElementById('screen3');
+        const startBtn = document.getElementById('startBtn');
+        const continueBtn = document.getElementById('continueBtn');
+        const continueBtn2 = document.getElementById('continueBtn2');
+        const yesBtn1 = document.getElementById('yesBtn1');
+        const noBtn1 = document.getElementById('noBtn1');
+        const yesBtn2 = document.getElementById('yesBtn2');
+        const noBtn2 = document.getElementById('noBtn2');
+        const yesBtn3 = document.getElementById('yesBtn3');
+        const noBtn3 = document.getElementById('noBtn3');
+
+        // Move counters
+        let moveCount2 = 0;
+        let moveCount3 = 0;
+        const maxMoves = 4;
+
+        // Context Screen 1 -> Context Screen 2
+        startBtn.addEventListener('click', function () {
+            screen0.style.display = 'none';
+            screen0b.style.display = 'block';
+        });
+
+        // Context Screen 2 -> First Question
+        continueBtn.addEventListener('click', function () {
+            screen0b.style.display = 'none';
+            screen1.style.display = 'block';
+        });
+
+        // First Question: Yes -> Thank You
+        yesBtn1.addEventListener('click', function () {
+            screen1.style.display = 'none';
+            screen3.style.display = 'block';
+        });
+
+        // First Question: No -> Interactive Question
+        noBtn1.addEventListener('click', function () {
+            screen1.style.display = 'none';
+            screen2.style.display = 'block';
+        });
+
+        // Interactive Question: Yes -> Thank You
+        yesBtn2.addEventListener('click', function () {
+            screen2.style.display = 'none';
+            screen3.style.display = 'block';
+        });
+
+        // Another Interactive Question: Yes -> Thank You
+        yesBtn3.addEventListener('click', function () {
+            screen2b.style.display = 'none';
+            screen3.style.display = 'block';
+        });
+
+        
+function moveNoButton2() {
+    const yesRect = yesBtn2.getBoundingClientRect();
+    const containerRect = screen2.getBoundingClientRect();
+
+    const buttonWidth = noBtn2.offsetWidth;
+    const buttonHeight = noBtn2.offsetHeight;
+    const radius = 25; // giảm từ 30 xuống 25 cho gần hơn
+
+    const angle = Math.random() * 2 * Math.PI;
+    const offsetX = Math.cos(angle) * radius;
+    const offsetY = Math.sin(angle) * radius;
+
+    const yesCenterX = yesRect.left - containerRect.left + yesRect.width / 2;
+    const yesCenterY = yesRect.top - containerRect.top + yesRect.height / 2;
+
+    let newX = yesCenterX + offsetX - buttonWidth / 2;
+    let newY = yesCenterY + yesRect.height + offsetY + 10; // cho nút No luôn nằm dưới Yes
+
+    newX = Math.max(0, Math.min(containerRect.width - buttonWidth, newX));
+    newY = Math.max(0, Math.min(containerRect.height - buttonHeight, newY));
+
+    noBtn2.style.position = "absolute";
+    noBtn2.style.left = `${newX}px`;
+    noBtn2.style.top = `${newY}px`;
+
+    moveCount2++;
+}
+
+noBtn2.addEventListener("mouseenter", function () {
+    if (moveCount2 < maxMoves) moveNoButton2();
+});
+
+noBtn2.addEventListener("click", function (e) {
+    if (moveCount2 < maxMoves) {
+        e.preventDefault();
+        moveNoButton2();
+    } else {
+        screen2.style.display = 'none';
+        screen0c.style.display = 'block';
+    }
+});
+
+// Hover sẽ khiến nút "No" chạy trốn (nếu chưa quá 4 lần)
+noBtn2.addEventListener("mouseenter", function () {
+    if (moveCount2 < maxMoves) {
+        moveNoButton2();
+    }
+});
+
+// Click chỉ có tác dụng sau khi đã di chuyển ít nhất 4 lần
+noBtn2.addEventListener("click", function (e) {
+    if (moveCount2 < maxMoves) {
+        e.preventDefault();
+        moveNoButton2();
+    } else {
+        // Sau 4 lần di chuyển, click sẽ cho qua màn tiếp theo
+        screen2.style.display = 'none';
+        screen0c.style.display = 'block';
+    }
+});
+
+
+        // Mouseover moves the button (blocks clicks during movement)
+        noBtn2.addEventListener('mouseover', function () {
+            if (moveCount2 < maxMoves) {
+                moveNoButton2();
+            }
+        });
+
+        // Click only works after 4 moves
+        noBtn2.addEventListener('click', function (e) {
+            if (moveCount2 < maxMoves) {
+                // Prevent click action, trigger move instead
+                e.preventDefault();
+                moveNoButton2();
+            } else {
+                // After 4 moves, clicking goes to Context Screen 3
+                screen2.style.display = 'none';
+                screen0c.style.display = 'block';
+            }
+        });
+
+        // Context Screen 3 -> Another Interactive Question
+        continueBtn2.addEventListener('click', function () {
+            screen0c.style.display = 'none';
+            screen2b.style.display = 'block';
+        });
+
+        // Another Interactive Question: No button escape effect
+        function moveNoButton3() {
+            if (moveCount3 < maxMoves) {
+                const container = screen2b.getBoundingClientRect();
+                const buttonWidth = 120;
+                const buttonHeight = 50;
+
+                // Calculate safe boundaries (keep button fully inside container with padding)
+                const maxX = container.width - buttonWidth - 80;
+                const maxY = container.height - buttonHeight - 100;
+                const minX = 80;
+                const minY = 150;
+
+                // Random position within safe boundaries
+                const newX = Math.floor(Math.random() * (maxX - minX)) + minX;
+                const newY = Math.floor(Math.random() * (maxY - minY)) + minY;
+
+                noBtn3.style.position = 'absolute';
+                noBtn3.style.left = newX + 'px';
+                noBtn3.style.top = newY + 'px';
+                moveCount3++;
+            }
+        }
+
+        noBtn3.addEventListener('mouseover', function () {
+            if (moveCount3 < maxMoves) {
+                moveNoButton3();
+            }
+        });
+
+        noBtn3.addEventListener('click', function (e) {
+            if (moveCount3 < maxMoves) {
+                e.preventDefault();
+                moveNoButton3();
+            }
+            // After 4 moves, this button becomes clickable but does nothing (stays on same screen)
+        });
+    </script>
+</body>
+
+</html>
